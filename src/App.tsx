@@ -1,16 +1,19 @@
 import React, {Suspense} from 'react';
-import {Counter} from "./components/Counter";
 import './styles/index.scss'
 import {Link, Route, Routes} from "react-router-dom";
-import AboutPage from "./pages/AboutUsPage/AboutPage";
-import MainPage from "./pages/MainPage/MainPage";
 import {AboutPageAsync} from "./pages/AboutUsPage/AboutPage.async";
 import {MainPageAsync} from "./pages/MainPage/MainPage.async";
+import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
+
 
 
 const App = () => {
+
+    const {theme,toggleTheme } = useTheme()
     return (
-        <div>
+        <div className={classNames('app', {hoverd:true, selected:false}, [theme, "cls1", "cls2"])}>
+            <button className="button" onClick={toggleTheme}>THEME</button>
             <Link to={"/"}>Главная</Link>
             <Link to={"/about"}>О нас</Link>
             <Suspense fallback={<div>Loading...</div>}>

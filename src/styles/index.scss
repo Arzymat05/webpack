@@ -1,6 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@use "reset";
+@use "themes/dark";
+@use "themes/normal";
+@use "variables/global";
 
+.app {
+  font: var(--font-m);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
 }
