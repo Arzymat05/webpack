@@ -1,5 +1,5 @@
-import React, {FC, ReactNode, useMemo, useState} from 'react';
-import {LOCAL_STORAGE_THEME_KEY, ThemeContext,Theme} from "./ThemeContext";
+import React, { ReactNode, useMemo, useState} from 'react';
+import {LOCAL_STORAGE_THEME_KEY, ThemeContext,Theme} from "../lib/ThemeContext";
 
 interface Props {
     children: ReactNode;
@@ -20,3 +20,4 @@ const ThemeContextProvider = ({children}:Props) => {
 };
 
 export default ThemeContextProvider;
+
